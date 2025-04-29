@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trending | FOFOCA - IFPR</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/trending.css">
+</head>
+<body>
+    <header>
+        <header>
+            <nav>
+                <ul>
+                    <li><a href="index.html"><i class="fas fa-home"></i> Início</a></li>
+                    <li><a href="trending.html"><i class="fas fa-fire"></i> Trending</a></li>
+                    <li><a href="categorias.html"><i class="fas fa-tags"></i> Categorias</a></li>
+                    <li><a href="explorar.html"><i class="fas fa-compass"></i> Explorar</a></li>
+                    <li><a href="notificacoes.html" id="notifications-link"><i class="fas fa-bell"></i></a></li>
+                    <li><a href="login.html" id="login-link"><i class="fas fa-sign-in-alt"></i> Login</a></li>
+                    <li><a href="registro.html" id="register-link"><i class="fas fa-user-plus"></i> Registrar</a></li>
+                    <li id="profile-link" style="display:none;">
+                        <a href="perfil.html" class="profile-nav">
+                            <img src="imagens/default-profile.jpg" alt="Perfil" class="profile-pic-small">
+                            <span id="nav-username">Perfil</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+            
+            <!-- Atualize a seção de criação de post -->
+            <section class="create-post">
+                <div class="post-box">
+                    <img src="imagens/default-profile.jpg" alt="Usuário" class="profile-pic-small" id="current-user-pic">
+                    <div class="post-input-container">
+                        <textarea placeholder="O que está acontecendo no IFPR?" id="post-textarea"></textarea>
+                        <div class="post-options">
+                            <div class="media-options">
+                                <button type="button" id="add-image"><i class="fas fa-image"></i></button>
+                                <button type="button" id="add-video"><i class="fas fa-video"></i></button>
+                                <button type="button" id="add-emoji"><i class="far fa-smile"></i></button>
+                                <input type="file" id="media-upload" accept="image/*,video/*" multiple style="display: none;">
+                            </div>
+                            <button type="button" id="submit-post" class="btn-post">Publicar</button>
+                        </div>
+                        <div class="media-preview" id="media-preview"></div>
+                    </div>
+                </div>
+            </section>
+    </header>
+
+    <main class="container trending-container">
+        <h2><i class="fas fa-fire"></i> Trending Now</h2>
+        
+        <div class="trending-content">
+            <div class="trending-list">
+                <div class="trending-header">
+                    <h3>Top Fofocas</h3>
+                    <div class="time-filter">
+                        <span>Hoje</span>
+                        <select id="trending-time">
+                            <option value="today">Hoje</option>
+                            <option value="week">Esta semana</option>
+                            <option value="month">Este mês</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <ol class="trending-posts">
+                    <li>
+                        <div class="trending-post">
+                            <span class="trending-rank">1</span>
+                            <div class="post-content">
+                                <h4>Novo diretor pode ser anunciado na próxima semana</h4>
+                                <p class="post-meta">Por @carloseduardo • 245 curtidas • 78 comentários</p>
+                            </div>
+                            <span class="trending-badge"><i class="fas fa-bolt"></i> Viral</span>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="trending-post">
+                            <span class="trending-rank">2</span>
+                            <div class="post-content">
+                                <h4>Prova de Cálculo será adiada - Confirmação?</h4>
+                                <p class="post-meta">Por @aninhamat • 189 curtidas • 42 comentários</p>
+                            </div>
+                            <span class="trending-badge"><i class="fas fa-arrow-up"></i> Crescendo</span>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="trending-post">
+                            <span class="trending-rank">3</span>
+                            <div class="post-content">
+                                <h4>Festival de música no campus - Inscrições abertas</h4>
+                                <p class="post-meta">Por @musiclover • 156 curtidas • 23 comentários</p>
+                            </div>
+                        </div>
+                    </li>
+                </ol>
+            </div>
+            
+            <div class="trending-tags">
+                <h3>Tags em Alta</h3>
+                <div class="tags-container">
+                    <a href="#" class="tag">#NovoDiretor</a>
+                    <a href="#" class="tag">#ProvaAdiada</a>
+                    <a href="#" class="tag">#FestivalMusical</a>
+                    <a href="#" class="tag">#CantinaLota</a>
+                    <a href="#" class="tag">#Trote2023</a>
+                    <a href="#" class="tag">#GreveProfessores</a>
+                    <a href="#" class="tag">#BibliotecaFechada</a>
+                    <a href="#" class="tag">#NovosComputadores</a>
+                </div>
+            </div>
+        </div>
+        
+        <section class="viral-posts">
+            <h3><i class="fas fa-bolt"></i> Posts Virais</h3>
+            <div class="fofocas-list">
+                <!-- Posts virais apareceriam aqui (mesma estrutura do index.html) -->
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <!-- Mesmo footer do index.html -->
+    </footer>
+
+    <script src="js/trending.js"></script>
+</body>
+</html>

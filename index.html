@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FOFOCA - IFPR | As melhores fofocas do campus</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Estilos do Header Fixo */
+        body {
+            padding-top: 80px;
+            background-color: #f5f5f5;
+        }
+        
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background-color: white;
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+        
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 5%;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #FF4757;
+            text-decoration: none;
+        }
+        
+        .logo i {
+            margin-right: 10px;
+            font-size: 1.5em;
+        }
+        
+        nav ul {
+            display: flex;
+            gap: 25px;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+        
+        nav a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            position: relative;
+        }
+        
+        nav a:hover, nav a.active {
+            color: #FF4757;
+        }
+        
+        nav a.active::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background-color: #FF4757;
+            border-radius: 3px;
+        }
+        
+        .profile-pic-small {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid #FF4757;
+        }
+        
+        .notification-badge {
+            background-color: #FF4757;
+            color: white;
+            border-radius: 50%;
+            width: 20px;
+            height: 20px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.7rem;
+            margin-left: 5px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Fixo Aprimorado -->
+    <header id="main-header">
+        <div class="header-container">
+            <a href="index.html" class="logo">
+                <i class="fas fa-comment-dots"></i> FOFOCA - IFPR
+            </a>
+            
+            <nav>
+                <ul>
+                    <li><a href="index.html" class="active"><i class="fas fa-home"></i> Início</a></li>
+                    <li><a href="trending.html"><i class="fas fa-fire"></i> Trending</a></li>
+                    <li><a href="categorias.html"><i class="fas fa-tags"></i> Categorias</a></li>
+                    <li><a href="explorar.html"><i class="fas fa-compass"></i> Explorar</a></li>
+                    <li>
+                        <a href="notificacoes.html" id="notifications-link">
+                            <i class="fas fa-bell"></i>
+                            <span class="notification-badge">3</span>
+                        </a>
+                    </li>
+                    <li><a href="login.html" id="login-link"><i class="fas fa-sign-in-alt"></i> Login</a></li>
+                    <li><a href="registro.html" id="register-link"><i class="fas fa-user-plus"></i> Registrar</a></li>
+                    <li id="profile-link" style="display:none;">
+                        <a href="perfil.html" class="profile-nav">
+                            <img src="imagens/default-profile.jpg" alt="Perfil" class="profile-pic-small">
+                            <span id="nav-username">Perfil</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Conteúdo Principal Aprimorado -->
+    <main class="container">
+        <!-- Seção de Destaque -->
+        <section class="highlight-section">
+            <div class="highlight-card">
+                <div class="highlight-content">
+                    <h2>Fofoca do Dia</h2>
+                    <p>Professor de Matemática é visto saindo com coordenadora após discussão na cantina!</p>
+                    <div class="highlight-meta">
+                        <span><i class="fas fa-eye"></i> 1.2k visualizações</span>
+                        <span><i class="fas fa-comments"></i> 245 comentários</span>
+                    </div>
+                    <a href="#" class="btn-highlight">Ver Fofoca Completa</a>
+                </div>
+                <div class="highlight-image">
+                    <img src="imagens/destaque.jpg" alt="Fofoca em Destaque">
+                </div>
+            </div>
+        </section>
+
+        <!-- Barra de Pesquisa Avançada -->
+        <section class="search-section">
+            <div class="search-container">
+                <div class="search-input-container">
+                    <i class="fas fa-search"></i>
+                    <input type="text" placeholder="Buscar fofocas, pessoas ou categorias..." id="search-input">
+                    <button id="search-button" class="btn-search">Buscar</button>
+                </div>
+                <div class="search-filters">
+                    <button class="filter-btn active">Tudo</button>
+                    <button class="filter-btn">Fofocas</button>
+                    <button class="filter-btn">Pessoas</button>
+                    <button class="filter-btn">Categorias</button>
+                    <button class="filter-btn">Eventos</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Criador de Posts Avançado -->
+        <section class="create-post">
+            <div class="post-box">
+                <img src="imagens/default-profile.jpg" alt="Usuário" class="profile-pic-medium" id="current-user-pic">
+                <div class="post-input-container">
+                    <textarea placeholder="O que está acontecendo no IFPR? Compartilhe suas fofocas..." id="post-textarea"></textarea>
+                    <div class="post-tools">
+                        <div class="media-tools">
+                            <button type="button" id="add-image" title="Adicionar imagem"><i class="fas fa-image"></i></button>
+                            <button type="button" id="add-video" title="Adicionar vídeo"><i class="fas fa-video"></i></button>
+                            <button type="button" id="add-poll" title="Criar enquete"><i class="fas fa-poll"></i></button>
+                            <button type="button" id="add-emoji" title="Adicionar emoji"><i class="far fa-smile"></i></button>
+                            <input type="file" id="media-upload" accept="image/*,video/*" multiple style="display: none;">
+                        </div>
+                        <div class="post-actions">
+                            <select id="post-privacy">
+                                <option value="public"><i class="fas fa-globe"></i> Público</option>
+                                <option value="friends">Apenas amigos</option>
+                                <option value="private">Privado</option>
+                            </select>
+                            <button type="button" id="submit-post" class="btn-post">Publicar</button>
+                        </div>
+                    </div>
+                    <div class="media-preview" id="media-preview"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Abas de Conteúdo -->
+        <section class="content-tabs">
+            <div class="tabs-header">
+                <button class="tab-btn active" data-tab="recentes">Recentes</button>
+                <button class="tab-btn" data-tab="populares">Populares</button>
+                <button class="tab-btn" data-tab="seguindo">Seguindo</button>
+                <button class="tab-btn" data-tab="salvos">Salvos</button>
+            </div>
+            <div class="tabs-content">
+                <!-- Conteúdo será carregado aqui via JavaScript -->
+            </div>
+        </section>
+
+        <!-- Grade de Fofocas -->
+        <section class="fofocas-grid">
+            <!-- Fofoca 1 -->
+            <article class="fofoca-card trending">
+                <div class="fofoca-header">
+                    <img src="imagens/user1.jpg" alt="Usuário" class="profile-pic-small">
+                    <div class="user-info">
+                        <h3>Ana Silva <span class="verified-badge"><i class="fas fa-check-circle"></i></span></h3>
+                        <span class="post-meta">@aninha • 2h atrás <i class="fas fa-globe"></i></span>
+                    </div>
+                    <button class="more-options"><i class="fas fa-ellipsis-h"></i></button>
+                </div>
+                <div class="fofoca-content">
+                    <p>Vocês viram o que aconteceu na cantina hoje? O professor de matemática e a coordenadora estavam tendo um debate acalorado sobre o cardápio! 😲 #Cantina #IFPR</p>
+                    <div class="post-media">
+                        <img src="imagens/cantina.jpg" alt="Cantina IFPR" class="fofoca-image">
+                    </div>
+                    <div class="post-tags">
+                        <a href="#" class="tag">#Cantina</a>
+                        <a href="#" class="tag">#IFPR</a>
+                        <a href="#" class="tag">#Professores</a>
+                    </div>
+                </div>
+                <div class="fofoca-stats">
+                    <span><i class="fas fa-eye"></i> 1.2k visualizações</span>
+                    <span><i class="fas fa-share"></i> 45 compartilhamentos</span>
+                </div>
+                <div class="fofoca-actions">
+                    <button class="action-btn like-btn"><i class="far fa-heart"></i> <span>125</span></button>
+                    <button class="action-btn comment-btn"><i class="far fa-comment"></i> <span>42</span></button>
+                    <button class="action-btn share-btn"><i class="fas fa-share"></i></button>
+                    <button class="action-btn save-btn"><i class="far fa-bookmark"></i></button>
+                </div>
+            </article>
+
+            <!-- Fofoca 2 (com enquete) -->
+            <article class="fofoca-card">
+                <div class="fofoca-header">
+                    <img src="imagens/user2.jpg" alt="Usuário" class="profile-pic-small">
+                    <div class="user-info">
+                        <h3>Carlos Oliveira</h3>
+                        <span class="post-meta">@carlinhos • 5h atrás <i class="fas fa-user-friends"></i></span>
+                    </div>
+                    <button class="more-options"><i class="fas fa-ellipsis-h"></i></button>
+                </div>
+                <div class="fofoca-content">
+                    <p>Rumor: O próximo vestibular pode ser cancelado por causa da reforma no prédio principal. Alguém confirma? #Vestibular #IFPR</p>
+                    <div class="post-poll">
+                        <div class="poll-question">Você acha que o vestibular será cancelado?</div>
+                        <div class="poll-options">
+                            <div class="poll-option">
+                                <div class="poll-bar" style="width: 70%"></div>
+                                <span>Sim (70%)</span>
+                            </div>
+                            <div class="poll-option">
+                                <div class="poll-bar" style="width: 30%"></div>
+                                <span>Não (30%)</span>
+                            </div>
+                        </div>
+                        <div class="poll-meta">152 votos • Enquete encerra em 2 dias</div>
+                    </div>
+                </div>
+                <div class="fofoca-actions">
+                    <button class="action-btn like-btn"><i class="far fa-heart"></i> <span>98</span></button>
+                    <button class="action-btn comment-btn"><i class="far fa-comment"></i> <span>35</span></button>
+                    <button class="action-btn share-btn"><i class="fas fa-share"></i></button>
+                    <button class="action-btn save-btn"><i class="far fa-bookmark"></i></button>
+                </div>
+            </article>
+
+            <!-- Fofoca 3 (vídeo) -->
+            <article class="fofoca-card">
+                <div class="fofoca-header">
+                    <img src="imagens/user3.jpg" alt="Usuário" class="profile-pic-small">
+                    <div class="user-info">
+                        <h3>Mariana Costa</h3>
+                        <span class="post-meta">@maricosta • 1d atrás <i class="fas fa-globe"></i></span>
+                    </div>
+                    <button class="more-options"><i class="fas fa-ellipsis-h"></i></button>
+                </div>
+                <div class="fofoca-content">
+                    <p>Confira o que rolou no festival cultural deste ano! #IFPR #FestivalCultural</p>
+                    <div class="post-media">
+                        <video controls class="fofoca-video">
+                            <source src="videos/festival.mp4" type="video/mp4">
+                            Seu navegador não suporta vídeos.
+                        </video>
+                    </div>
+                </div>
+                <div class="fofoca-stats">
+                    <span><i class="fas fa-eye"></i> 2.5k visualizações</span>
+                    <span><i class="fas fa-share"></i> 128 compartilhamentos</span>
+                </div>
+                <div class="fofoca-actions">
+                    <button class="action-btn like-btn"><i class="far fa-heart"></i> <span>324</span></button>
+                    <button class="action-btn comment-btn"><i class="far fa-comment"></i> <span>87</span></button>
+                    <button class="action-btn share-btn"><i class="fas fa-share"></i></button>
+                    <button class="action-btn save-btn"><i class="far fa-bookmark"></i></button>
+                </div>
+            </article>
+        </section>
+
+        <!-- Sidebar com Widgets -->
+        <aside class="main-sidebar">
+            <!-- Widget: Sugestões para seguir -->
+            <div class="sidebar-widget">
+                <h3><i class="fas fa-user-plus"></i> Sugestões para seguir</h3>
+                <div class="suggestions-list">
+                    <div class="suggestion-item">
+                        <img src="imagens/user4.jpg" alt="Usuário" class="profile-pic-small">
+                        <div class="suggestion-info">
+                            <h4>Pedro Henrique</h4>
+                            <span>@pedroh</span>
+                            <small>12 seguidores</small>
+                        </div>
+                        <button class="follow-btn">Seguir</button>
+                    </div>
+                    <div class="suggestion-item">
+                        <img src="imagens/user5.jpg" alt="Usuário" class="profile-pic-small">
+                        <div class="suggestion-info">
+                            <h4>Juliana Santos</h4>
+                            <span>@jusantos</span>
+                            <small>45 seguidores</small>
+                        </div>
+                        <button class="follow-btn">Seguir</button>
+                    </div>
+                </div>
+                <a href="explorar.html" class="see-more">Ver mais</a>
+            </div>
+
+            <!-- Widget: Eventos próximos -->
+            <div class="sidebar-widget">
+                <h3><i class="fas fa-calendar-alt"></i> Eventos próximos</h3>
+                <div class="events-list">
+                    <div class="event-item">
+                        <div class="event-date">
+                            <span class="day">15</span>
+                            <span class="month">MAI</span>
+                        </div>
+                        <div class="event-info">
+                            <h4>Palestra com ex-aluno</h4>
+                            <small>Auditório Principal • 14h</small>
+                        </div>
+                    </div>
+                    <div class="event-item">
+                        <div class="event-date">
+                            <span class="day">20</span>
+                            <span class="month">MAI</span>
+                        </div>
+                        <div class="event-info">
+                            <h4>Feira de Ciências</h4>
+                            <small>Pátio Central • 9h-17h</small>
+                        </div>
+                    </div>
+                </div>
+                <a href="#" class="see-more">Ver todos</a>
+            </div>
+
+            <!-- Widget: Categorias populares -->
+            <div class="sidebar-widget">
+                <h3><i class="fas fa-tags"></i> Categorias populares</h3>
+                <div class="categories-list">
+                    <a href="#" class="category-tag">Professores</a>
+                    <a href="#" class="category-tag">Alunos</a>
+                    <a href="#" class="category-tag">Cantina</a>
+                    <a href="#" class="category-tag">Eventos</a>
+                    <a href="#" class="category-tag">Relacionamentos</a>
+                    <a href="#" class="category-tag">Vestibular</a>
+                </div>
+            </div>
+        </aside>
+    </main>
+
+    <!-- Footer Aprimorado -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-top">
+                <div class="footer-brand">
+                    <h2><i class="fas fa-comment-dots"></i> FOFOCA - IFPR</h2>
+                    <p>As melhores fofocas do campus em um só lugar!</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-tiktok"></i></a>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <div class="links-column">
+                        <h3>Sobre</h3>
+                        <ul>
+                            <li><a href="#">Sobre nós</a></li>
+                            <li><a href="#">Termos de Serviço</a></li>
+                            <li><a href="#">Política de Privacidade</a></li>
+                            <li><a href="#">Cookies</a></li>
+                        </ul>
+                    </div>
+                    <div class="links-column">
+                        <h3>Recursos</h3>
+                        <ul>
+                            <li><a href="#">Central de Ajuda</a></li>
+                            <li><a href="#">Status</a></li>
+                            <li><a href="#">Diretrizes</a></li>
+                            <li><a href="#">FAQ</a></li>
+                        </ul>
+                    </div>
+                    <div class="links-column">
+                        <h3>Contato</h3>
+                        <ul>
+                            <li><a href="#">Contate-nos</a></li>
+                            <li><a href="#">Patrocínios</a></li>
+                            <li><a href="#">Imprensa</a></li>
+                            <li><a href="#">Denúncias</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 FOFOCA - IFPR. Todos os direitos reservados.</p>
+                <div class="footer-options">
+                    <a href="#">Termos</a>
+                    <a href="#">Privacidade</a>
+                    <a href="#">Cookies</a>
+                    <a href="#">Acessibilidade</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Modal para visualização de mídia -->
+    <div class="media-modal" id="media-modal">
+        <div class="modal-content">
+            <button class="close-modal"><i class="fas fa-times"></i></button>
+            <div class="media-container">
+                <img src="" alt="Mídia ampliada" id="modal-media">
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="js/auth.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/media-upload.js"></script>
+    <script src="js/emoji-picker.js"></script>
+    <script>
+        // Interações avançadas
+        document.addEventListener('DOMContentLoaded', function() {
+            // Controle do header durante o scroll
+            const header = document.getElementById('main-header');
+            window.addEventListener('scroll', function() {
+                if (window.scrollY > 50) {
+                    header.classList.add('header-scrolled');
+                } else {
+                    header.classList.remove('header-scrolled');
+                }
+            });
+
+            // Controle das abas de conteúdo
+            const tabButtons = document.querySelectorAll('.tab-btn');
+            tabButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    tabButtons.forEach(btn => btn.classList.remove('active'));
+                    this.classList.add('active');
+                    const tabId = this.getAttribute('data-tab');
+                    // Aqui você carregaria o conteúdo correspondente à aba
+                    console.log('Aba selecionada:', tabId);
+                });
+            });
+
+            // Interação com botões de like
+            const likeButtons = document.querySelectorAll('.like-btn');
+            likeButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    const icon = this.querySelector('i');
+                    const countSpan = this.querySelector('span');
+                    let count = parseInt(countSpan.textContent);
+                    
+                    if (icon.classList.contains('far')) {
+                        icon.classList.remove('far');
+                        icon.classList.add('fas');
+                        countSpan.textContent = count + 1;
+                        this.classList.add('liked');
+                    } else {
+                        icon.classList.remove('fas');
+                        icon.classList.add('far');
+                        countSpan.textContent = count - 1;
+                        this.classList.remove('liked');
+                    }
+                });
+            });
+
+            // Verificação de login
+            const isLoggedIn = localStorage.getItem('isLoggedIn') === 'true';
+            if (isLoggedIn) {
+                document.getElementById('login-link').style.display = 'none';
+                document.getElementById('register-link').style.display = 'none';
+                document.getElementById('profile-link').style.display = 'flex';
+                
+                // Carregar dados do usuário
+                const username = localStorage.getItem('username') || 'Perfil';
+                document.getElementById('nav-username').textContent = username;
+                
+                const profilePic = localStorage.getItem('profilePic') || 'imagens/default-profile.jpg';
+                document.querySelectorAll('.profile-pic-medium, .profile-pic-small').forEach(img => {
+                    img.src = profilePic;
+                });
+            }
+
+            // Simulação de upload de mídia
+            const mediaUpload = document.getElementById('media-upload');
+            const mediaPreview = document.getElementById('media-preview');
+            
+            mediaUpload.addEventListener('change', function(e) {
+                mediaPreview.innerHTML = '';
+                Array.from(e.target.files).forEach(file => {
+                    const reader = new FileReader();
+                    reader.onload = function(event) {
+                        const mediaElement = file.type.startsWith('image') ? 
+                            `<img src="${event.target.result}" alt="Preview">` :
+                            `<video controls><source src="${event.target.result}" type="${file.type}"></video>`;
+                        
+                        const mediaItem = document.createElement('div');
+                        mediaItem.className = 'media-item';
+                        mediaItem.innerHTML = `
+                            ${mediaElement}
+                            <button class="remove-media"><i class="fas fa-times"></i></button>
+                        `;
+                        mediaPreview.appendChild(mediaItem);
+                    };
+                    reader.readAsDataURL(file);
+                });
+            });
+        });
+    </script>
+</body>
+</html>

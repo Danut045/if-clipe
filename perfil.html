@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perfil | FOFOCA - IFPR</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1><i class="fas fa-comment-dots"></i> FOFOCA - IFPR</h1>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Início</a></li>
+                    <li><a href="#">Trending</a></li>
+                    <li><a href="#">Categorias</a></li>
+                    <li><a href="config.html"><i class="fas fa-cog"></i> Configurações</a></li>
+                    <li id="profile-link">
+                        <a href="perfil.html">
+                            <img src="imagens/default-profile.jpg" alt="Perfil" class="profile-pic-small">
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container profile-container">
+        <section class="profile-header">
+            <div class="cover-photo">
+                <img src="imagens/cover-default.jpg" alt="Capa">
+                <button class="edit-cover"><i class="fas fa-camera"></i> Alterar capa</button>
+            </div>
+            <div class="profile-info">
+                <div class="profile-pic-large-container">
+                    <img src="imagens/default-profile.jpg" alt="Perfil" class="profile-pic-large">
+                    <button class="edit-profile-pic"><i class="fas fa-camera"></i></button>
+                </div>
+                <div class="profile-details">
+                    <h2>Maria Fernanda</h2>
+                    <p class="username">@mariafernanda</p>
+                    <p class="bio">Estudante de Informática no IFPR. Amo fofocas e compartilhar novidades!</p>
+                    <div class="profile-stats">
+                        <span><strong>142</strong> Fofocas</span>
+                        <span><strong>1.2k</strong> Seguidores</span>
+                        <span><strong>356</strong> Seguindo</span>
+                    </div>
+                </div>
+                <button class="edit-profile">Editar Perfil</button>
+            </div>
+        </section>
+
+        <section class="profile-content">
+            <div class="profile-tabs">
+                <button class="active">Fofocas</button>
+                <button>Comentários</button>
+                <button>Curtidas</button>
+                <button>Salvos</button>
+            </div>
+
+            <div class="fofocas-list">
+                <!-- Fofocas do usuário apareceriam aqui -->
+                <article class="fofoca-card">
+                    <div class="fofoca-header">
+                        <img src="imagens/default-profile.jpg" alt="Usuário" class="profile-pic-small">
+                        <div class="user-info">
+                            <h3>Maria Fernanda</h3>
+                            <span class="post-time">Ontem</span>
+                        </div>
+                    </div>
+                    <div class="fofoca-content">
+                        <p>Parece que teremos um novo professor de física no próximo semestre! Alguém sabe quem é?</p>
+                    </div>
+                    <div class="fofoca-actions">
+                        <button><i class="far fa-comment"></i> 7</button>
+                        <button><i class="fas fa-retweet"></i> 3</button>
+                        <button><i class="far fa-heart"></i> 18</button>
+                    </div>
+                </article>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 FOFOCA - IFPR. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

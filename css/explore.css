@@ -1,0 +1,404 @@
+/* Página Explorar */
+.explore-page {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 30px;
+    padding: 30px 0;
+}
+
+/* Barra de pesquisa */
+.explore-search {
+    background-color: white;
+    padding: 20px;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+}
+
+.search-container {
+    display: flex;
+    align-items: center;
+    background-color: #f5f5f5;
+    border-radius: var(--border-radius);
+    padding: 10px 15px;
+    margin-bottom: 15px;
+}
+
+.search-container i {
+    color: var(--text-light);
+    margin-right: 10px;
+}
+
+.search-container input {
+    flex: 1;
+    border: none;
+    background: none;
+    font-size: 1rem;
+}
+
+.search-container input:focus {
+    outline: none;
+}
+
+.btn-search {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 8px 20px;
+    border-radius: var(--border-radius);
+    font-weight: 500;
+    border: none;
+    cursor: pointer;
+}
+
+.search-filters {
+    display: flex;
+    gap: 10px;
+    overflow-x: auto;
+    padding-bottom: 5px;
+}
+
+.filter-btn {
+    background-color: #f5f5f5;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    white-space: nowrap;
+    cursor: pointer;
+}
+
+.filter-btn.active {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+/* Conteúdo em destaque */
+.highlight-content {
+    background-color: white;
+    padding: 20px;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+}
+
+.highlight-content h2 {
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.highlight-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: 15px;
+    height: 300px;
+}
+
+.highlight-card {
+    position: relative;
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 20px;
+    color: white;
+    transition: transform 0.3s;
+}
+
+.highlight-card.big {
+    grid-row: span 1;
+    grid-column: span 1;
+}
+
+.highlight-card:hover {
+    transform: translateY(-5px);
+}
+
+.highlight-info {
+    position: relative;
+    z-index: 2;
+}
+
+.highlight-category {
+    display: inline-block;
+    background-color: rgba(255, 255, 255, 0.2);
+    padding: 3px 10px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    margin-bottom: 10px;
+}
+
+.highlight-card h3 {
+    font-size: 1.3rem;
+    margin-bottom: 5px;
+}
+
+.highlight-card p {
+    font-size: 0.9rem;
+    opacity: 0.9;
+    margin-bottom: 10px;
+}
+
+.highlight-stats {
+    font-size: 0.8rem;
+    opacity: 0.8;
+}
+
+/* Seções com cabeçalho */
+.section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.section-header h2 {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.see-all {
+    font-size: 0.9rem;
+    color: var(--primary-color);
+}
+
+/* Pessoas populares */
+.popular-people {
+    background-color: white;
+    padding: 20px;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+}
+
+.people-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 15px;
+}
+
+.person-card {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 15px;
+    border-radius: var(--border-radius);
+    background-color: #f9f9f9;
+    transition: transform 0.3s;
+}
+
+.person-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.profile-pic-medium {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.person-info {
+    flex: 1;
+}
+
+.person-info h3 {
+    font-size: 1rem;
+    margin-bottom: 3px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.username {
+    font-size: 0.8rem;
+    color: var(--text-light);
+}
+
+.person-stats {
+    display: flex;
+    gap: 10px;
+    font-size: 0.7rem;
+    color: var(--text-light);
+    margin-top: 5px;
+}
+
+.follow-btn {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    cursor: pointer;
+}
+
+.follow-btn:hover {
+    background-color: #e84141;
+}
+
+/* Categorias populares */
+.popular-categories {
+    background-color: white;
+    padding: 20px;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+}
+
+.categories-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 15px;
+}
+
+.category-tag {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px 10px;
+    border-radius: var(--border-radius);
+    color: white;
+    text-decoration: none;
+    text-align: center;
+    transition: transform 0.3s;
+}
+
+.category-tag i {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.category-tag span {
+    font-weight: 500;
+}
+
+.category-tag small {
+    font-size: 0.7rem;
+    opacity: 0.8;
+    margin-top: 5px;
+}
+
+.category-tag:hover {
+    transform: translateY(-5px);
+}
+
+.category-tag.big {
+    grid-column: span 2;
+    padding: 30px 10px;
+}
+
+.category-tag.big i {
+    font-size: 2rem;
+}
+
+/* Tags populares */
+.popular-tags {
+    background-color: white;
+    padding: 20px;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+}
+
+.tags-cloud {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.tag {
+    display: inline-block;
+    padding: 8px 15px;
+    background-color: #f5f5f5;
+    border-radius: 20px;
+    color: var(--text-color);
+    text-decoration: none;
+    transition: all 0.3s;
+}
+
+.tag:hover {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.tag.big {
+    font-size: 1.1rem;
+    padding: 10px 20px;
+}
+
+.tag.medium {
+    font-size: 0.9rem;
+}
+
+.tag.small {
+    font-size: 0.8rem;
+    padding: 5px 12px;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .highlight-grid {
+        grid-template-columns: 1fr;
+        height: auto;
+    }
+    
+    .highlight-card {
+        height: 200px;
+    }
+    
+    .people-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+    
+    .categories-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    .people-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .categories-grid {
+        grid-template-columns: 1fr;
+    }
+}
+/* Estilos para a seção de busca */
+.search-section {
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.search-container {
+    display: flex;
+    max-width: 600px;
+    margin: 0 auto;
+    border-radius: 30px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.search-container input {
+    flex: 1;
+    padding: 12px 20px;
+    border: none;
+    font-size: 1rem;
+    outline: none;
+}
+
+.search-container button {
+    background-color: #FF4757;
+    color: white;
+    border: none;
+    padding: 0 20px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.search-container button:hover {
+    background-color: #e84141;
+}

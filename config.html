@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Configurações | FOFOCA - IFPR</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1><i class="fas fa-comment-dots"></i> FOFOCA - IFPR</h1>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Início</a></li>
+                    <li><a href="#">Trending</a></li>
+                    <li><a href="#">Categorias</a></li>
+                    <li><a href="config.html"><i class="fas fa-cog"></i> Configurações</a></li>
+                    <li id="profile-link">
+                        <a href="perfil.html">
+                            <img src="imagens/default-profile.jpg" alt="Perfil" class="profile-pic-small">
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container settings-container">
+        <h2>Configurações da Conta</h2>
+        
+        <div class="settings-tabs">
+            <button class="active" data-tab="profile">Perfil</button>
+            <button data-tab="security">Segurança</button>
+            <button data-tab="privacy">Privacidade</button>
+            <button data-tab="notifications">Notificações</button>
+        </div>
+        
+        <div class="settings-content">
+            <div id="profile-tab" class="tab-content active">
+                <form id="profile-form">
+                    <div class="form-group">
+                        <label for="profile-pic">Foto de Perfil</label>
+                        <div class="profile-pic-upload">
+                            <img src="imagens/default-profile.jpg" alt="Perfil" id="profile-pic-preview">
+                            <input type="file" id="profile-pic" accept="image/*">
+                            <button type="button" class="btn-secondary" id="upload-pic-btn">Alterar Foto</button>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="cover-pic">Foto de Capa</label>
+                        <div class="cover-pic-upload">
+                            <img src="imagens/cover-default.jpg" alt="Capa" id="cover-pic-preview">
+                            <input type="file" id="cover-pic" accept="image/*">
+                            <button type="button" class="btn-secondary" id="upload-cover-btn">Alterar Capa</button>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="display-name">Nome de Exibição</label>
+                        <input type="text" id="display-name" value="Maria Fernanda">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="username">Nome de Usuário</label>
+                        <input type="text" id="username" value="@mariafernanda">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="bio">Biografia</label>
+                        <textarea id="bio" rows="3">Estudante de Informática no IFPR. Amo fofocas e compartilhar novidades!</textarea>
+                    </div>
+                    
+                    <button type="submit" class="btn-primary">Salvar Alterações</button>
+                </form>
+            </div>
+            
+            <div id="security-tab" class="tab-content">
+                <form id="security-form">
+                    <div class="form-group">
+                        <label for="current-password">Senha Atual</label>
+                        <input type="password" id="current-password" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="new-password">Nova Senha</label>
+                        <input type="password" id="new-password" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="confirm-new-password">Confirmar Nova Senha</label>
+                        <input type="password" id="confirm-new-password" required>
+                    </div>
+                    
+                    <button type="submit" class="btn-primary">Alterar Senha</button>
+                </form>
+                
+                <div class="security-session">
+                    <h3>Sessões Ativas</h3>
+                    <div class="session-item">
+                        <div>
+                            <strong>Chrome - Windows</strong>
+                            <p>Último acesso: Hoje, 14:30</p>
+                            <p>IP: 192.168.1.1</p>
+                        </div>
+                        <button class="btn-secondary">Terminar Sessão</button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Outras abas (Privacidade, Notificações) podem ser adicionadas aqui -->
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2023 FOFOCA - IFPR. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

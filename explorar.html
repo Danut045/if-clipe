@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Explorar | FOFOCA - IFPR</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/explore.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1><i class="fas fa-comment-dots"></i> FOFOCA - IFPR</h1>
+            <nav>
+                <ul>
+                    <li><a href="index.html"><i class="fas fa-home"></i> Início</a></li>
+                    <li><a href="trending.html"><i class="fas fa-fire"></i> Trending</a></li>
+                    <li><a href="categorias.html"><i class="fas fa-tags"></i> Categorias</a></li>
+                    <li><a href="explorar.html" class="active"><i class="fas fa-compass"></i> Explorar</a></li>
+                    <li><a href="notificacoes.html" id="notifications-link"><i class="fas fa-bell"></i> <span class="notification-badge">3</span></a></li>
+                    <li><a href="login.html" id="login-link"><i class="fas fa-sign-in-alt"></i> Login</a></li>
+                    <li><a href="registro.html" id="register-link"><i class="fas fa-user-plus"></i> Registrar</a></li>
+                    <li id="profile-link" style="display:none;">
+                        <a href="perfil.html" class="profile-nav">
+                            <img src="imagens/default-profile.jpg" alt="Perfil" class="profile-pic-small">
+                            <span id="nav-username">Perfil</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container explore-page">
+        <!-- Barra de pesquisa avançada -->
+        <section class="explore-search">
+            <div class="search-container">
+                <i class="fas fa-search"></i>
+                <input type="text" placeholder="Pesquisar fofocas, pessoas, categorias...">
+                <button class="btn-search">Buscar</button>
+            </div>
+            <div class="search-filters">
+                <button class="filter-btn active">Tudo</button>
+                <button class="filter-btn">Fofocas</button>
+                <button class="filter-btn">Pessoas</button>
+                <button class="filter-btn">Categorias</button>
+                <button class="filter-btn">Tags</button>
+            </div>
+        </section>
+
+        <!-- Conteúdo em destaque -->
+        <section class="highlight-content">
+            <h2><i class="fas fa-bolt"></i> Destaques do IFPR</h2>
+            <div class="highlight-grid">
+                <div class="highlight-card big" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('imagens/evento-destaque.jpg');">
+                    <div class="highlight-info">
+                        <span class="highlight-category">Evento</span>
+                        <h3>Festival Cultural 2023</h3>
+                        <p>Confira as melhores fofocas sobre o maior evento do ano no IFPR</p>
+                        <span class="highlight-stats">1.2k posts • 5.4k interações</span>
+                    </div>
+                </div>
+                
+                <div class="highlight-card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('imagens/professor-destaque.jpg');">
+                    <div class="highlight-info">
+                        <span class="highlight-category">Professor</span>
+                        <h3>Novo Diretor</h3>
+                        <span class="highlight-stats">356 posts</span>
+                    </div>
+                </div>
+                
+                <div class="highlight-card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('imagens/cantina-destaque.jpg');">
+                    <div class="highlight-info">
+                        <span class="highlight-category">Cantina</span>
+                        <h3>Cardápio Polêmico</h3>
+                        <span class="highlight-stats">189 posts</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Pessoas populares -->
+        <section class="popular-people">
+            <div class="section-header">
+                <h2><i class="fas fa-users"></i> Pessoas Populares</h2>
+                <a href="#" class="see-all">Ver todas</a>
+            </div>
+            
+            <div class="people-grid">
+                <div class="person-card">
+                    <img src="imagens/user1.jpg" alt="Usuário" class="profile-pic-medium">
+                    <div class="person-info">
+                        <h3>Ana Silva <span class="verified-badge"><i class="fas fa-check-circle"></i></span></h3>
+                        <span class="username">@aninha</span>
+                        <div class="person-stats">
+                            <span><i class="fas fa-comment"></i> 245 posts</span>
+                            <span><i class="fas fa-users"></i> 1.2k seguidores</span>
+                        </div>
+                    </div>
+                    <button class="follow-btn">Seguir</button>
+                </div>
+                
+                <div class="person-card">
+                    <img src="imagens/user2.jpg" alt="Usuário" class="profile-pic-medium">
+                    <div class="person-info">
+                        <h3>Carlos Oliveira</h3>
+                        <span class="username">@carlinhos</span>
+                        <div class="person-stats">
+                            <span><i class="fas fa-comment"></i> 189 posts</span>
+                            <span><i class="fas fa-users"></i> 856 seguidores</span>
+                        </div>
+                    </div>
+                    <button class="follow-btn">Seguir</button>
+                </div>
+                
+                <div class="person-card">
+                    <img src="imagens/user3.jpg" alt="Usuário" class="profile-pic-medium">
+                    <div class="person-info">
+                        <h3>Mariana Costa</h3>
+                        <span class="username">@maricosta</span>
+                        <div class="person-stats">
+                            <span><i class="fas fa-comment"></i> 132 posts</span>
+                            <span><i class="fas fa-users"></i> 723 seguidores</span>
+                        </div>
+                    </div>
+                    <button class="follow-btn">Seguir</button>
+                </div>
+                
+                <div class="person-card">
+                    <img src="imagens/user4.jpg" alt="Usuário" class="profile-pic-medium">
+                    <div class="person-info">
+                        <h3>Pedro Henrique</h3>
+                        <span class="username">@pedroh</span>
+                        <div class="person-stats">
+                            <span><i class="fas fa-comment"></i> 98 posts</span>
+                            <span><i class="fas fa-users"></i> 512 seguidores</span>
+                        </div>
+                    </div>
+                    <button class="follow-btn">Seguir</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Categorias populares -->
+        <section class="popular-categories">
+            <div class="section-header">
+                <h2><i class="fas fa-tags"></i> Categorias em Alta</h2>
+                <a href="categorias.html" class="see-all">Ver todas</a>
+            </div>
+            
+            <div class="categories-grid">
+                <a href="#" class="category-tag big" style="background-color: #FF7675;">
+                    <i class="fas fa-graduation-cap"></i>
+                    <span>Professores</span>
+                    <small>245 posts</small>
+                </a>
+                
+                <a href="#" class="category-tag" style="background-color: #74B9FF;">
+                    <i class="fas fa-users"></i>
+                    <span>Alunos</span>
+                </a>
+                
+                <a href="#" class="category-tag" style="background-color: #55EFC4;">
+                    <i class="fas fa-utensils"></i>
+                    <span>Cantina</span>
+                </a>
+                
+                <a href="#" class="category-tag" style="background-color: #A29BFE;">
+                    <i class="fas fa-calendar-alt"></i>
+                    <span>Eventos</span>
+                </a>
+                
+                <a href="#" class="category-tag" style="background-color: #FFEAA7;">
+                    <i class="fas fa-building"></i>
+                    <span>Infraestrutura</span>
+                </a>
+                
+                <a href="#" class="category-tag" style="background-color: #FD79A8;">
+                    <i class="fas fa-heart"></i>
+                    <span>Relacionamentos</span>
+                </a>
+            </div>
+        </section>
+
+        <!-- Tags populares -->
+        <section class="popular-tags">
+            <div class="section-header">
+                <h2><i class="fas fa-hashtag"></i> Tags Populares</h2>
+                <a href="#" class="see-all">Ver todas</a>
+            </div>
+            
+            <div class="tags-cloud">
+                <a href="#" class="tag big">#NovoDiretor</a>
+                <a href="#" class="tag medium">#ProvaAdiada</a>
+                <a href="#" class="tag small">#FestivalCultural</a>
+                <a href="#" class="tag big">#Cantina</a>
+                <a href="#" class="tag medium">#Trote2023</a>
+                <a href="#" class="tag small">#GreveProfessores</a>
+                <a href="#" class="tag medium">#BibliotecaFechada</a>
+                <a href="#" class="tag big">#NovosComputadores</a>
+                <a href="#" class="tag small">#Calouros</a>
+                <a href="#" class="tag medium">#Formatura</a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <h2><i class="fas fa-comment-dots"></i> FOFOCA - IFPR</h2>
+                    <p>Descubra tudo que acontece no campus</p>
+                </div>
+                <div class="footer-links">
+                    <div class="links-column">
+                        <h3>Explorar</h3>
+                        <ul>
+                            <li><a href="index.html">Início</a></li>
+                            <li><a href="trending.html">Trending</a></li>
+                            <li><a href="categorias.html">Categorias</a></li>
+                            <li><a href="explorar.html">Explorar</a></li>
+                        </ul>
+                    </div>
+                    <div class="links-column">
+                        <h3>Legal</h3>
+                        <ul>
+                            <li><a href="#">Termos</a></li>
+                            <li><a href="#">Privacidade</a></li>
+                            <li><a href="#">Cookies</a></li>
+                            <li><a href="#">Diretrizes</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="footer-social">
+                    <h3>Siga-nos</h3>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-tiktok"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 FOFOCA - IFPR. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/explore.js"></script>
+</body>
+</html>
